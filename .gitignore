@@ -1,0 +1,7 @@
+*.py[cod]
+
+data/
+trade_log.log
+*.log
+config/keys*.txt
+config/ip-whitelist.txt

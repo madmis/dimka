@@ -1,0 +1,13 @@
+version: '3'
+services:
+    bitbot:
+        build: ./docker/dev/py
+        image: dimka-wex-bot:latest
+        environment:
+            - PYTHONPATH=/var/www
+        expose:
+            - "3000"
+        volumes:
+            - ./:/var/www
+        tty: true
+        hostname: dimka
