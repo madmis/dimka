@@ -6,6 +6,6 @@ python:
 install:
   - pip install -r requirements-test.txt
 script:
-    coverage  run --source dimka test
+    coverage  run --source dimka setup.py test
 after_success:
     coveralls
