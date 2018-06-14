@@ -1,0 +1,11 @@
+# Sqlite database file path.
+db_path: /var/www/data/test_app.sqlite3
+
+# Api keys file path (full path): /var/www/config/keys.txt
+# The given file is assumed to be a text file with three lines (key, secret, nonce) per entry.
+key_path: /var/www/conf/keys.txt.dist
+
+# Bot pair
+pair: bch_btc
+# Currencies decimal units (int)
+pair_units: 8

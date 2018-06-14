@@ -6,3 +6,7 @@ trade_log.log
 *.log
 config/keys*.txt
 config/ip-whitelist.txt
+config/*.private
+*.private
+Dockerfile
+docker-compose.yml

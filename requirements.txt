@@ -1,2 +1,5 @@
 pyYaml==3.12
 peewee==3.5.0
+coloredlogs==10.0
+verboselogs==1.7
+wexapi==0.1.4

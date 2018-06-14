@@ -1,4 +1,4 @@
-FROM python:3
+FROM python:3.6
 
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ENV DEBIAN_FRONTEND noninteractive
@@ -9,8 +9,11 @@ RUN TERM=xterm
 RUN echo 'PS1="\[\033[36m\]\u\[\033[m\]@\[\033[95;1m\]dimka-wex:\[\033[34m\]\w\[\033[m\]\$ "' >> ~/.bashrc
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+RUN pip install ipdb
 RUN pip install pyYaml
 RUN pip install peewee
-RUN pip install ipdb
+RUN pip install wexapi
+RUN pip install coloredlogs
+RUN pip install verboselogs
 
 WORKDIR /var/www
