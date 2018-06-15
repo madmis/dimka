@@ -11,15 +11,58 @@ This is an experimental bot for auto trading the wex.nz exchange.
 **Use this bot at your own risk.**
 
 
+## Table Of Contents
+
+- [How it looks?](#how-it-looks)
+- [How it works?](#how-it-works)
+- [Installation with Docker](#installation-with-docker)
+- [Login to docker container](#login-to-docker-containert)
+- [Running the bot](#running-the-bot)
+- [Run tests](#run-tests)
+- [Contributing](#contributing)
+- [Donate & Thanks to developer](#donate)
+- [Disclaimer](#disclaimer)
+
+
 ## How it looks?
 
-![Alt text](/i/img_1.png?raw=true "Optional Title")
+![How it looks?](/i/img_1.png?raw=true "Optional Title")
 
 
 ## How it works? 
 
 
-## Installation and Configuration
+## Installation with Docker
+
+Install [Docker](https://docs.docker.com/install/) and [Docker Compose](https://docs.docker.com/compose/install/)
+
+```
+    cp /{proj_path}/Dockerfile.dist /{proj_path}/Dockerfile 
+    cp /{proj_path}/docker-compose.yml.dist /{proj_path}/docker-compose.yml 
+```
+
+Build and run docker container
+
+```
+    docker-compose build 
+    docker-compose up -d 
+```
+
+Inside [conf](/conf/) you can find configuration examples.
+Copy this files and create your own configuration.
+* **[/conf/keys.txt.dist](/conf/keys.txt.dist)** - this file to store api keys and nonce value.
+ Initial nonce value always should 1. This value will be auto updated by bot.
+ Don't change nonce after running the bot.
+* **[/conf/conf.yaml.dist](/conf/conf.yaml.dist)** - this file contains bot configuration parameters.
+Change them for your own needs.  
+
+**Important!!!** Each bot instance should have his own:
+* configuration file
+* database (database file defined in configuration file)
+* keys file and public/private keys
+* Wex.nz account  
+
+*Don't share this data between separate bot instances. Otherwise the behavior of the bot can be unpredictable.*
 
 
 ## Login to docker container
@@ -27,11 +70,29 @@ This is an experimental bot for auto trading the wex.nz exchange.
     docker exec  -ti -e COLUMNS="`tput cols`" -e LINES="`tput lines`" dimka-wex  bash
 ```
 
+## Running the bot
+To see help about bot additional parameters use command:
+```bash
+    python 3-step-bot.py --help
+```
+
+Running the bot:
+```bash
+    python 3-step-bot.py /var/www/conf/conf.yaml. --step=3 --iters=10 --high-diff=50 --debug
+```
+
+
 ## Run tests
 ```bash
 
     python -m unittest discover dimka
 ```
+
+
+## Contributing
+To create new endpoint - [create issue](https://github.com/madmis/dimka/issues/new) 
+or [create pull request](https://github.com/madmis/dimka/compare)
+
 
 ## Donate
 
