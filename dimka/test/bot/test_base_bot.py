@@ -12,7 +12,7 @@ import dimka.core as core
 
 FIXTURE_DIR = Path(__file__).parent.resolve() / "fixtures"
 
-file = "/var/keys.tmp"
+file = "/tmp/keys.tmp"
 
 
 class TestBaseBot(unittest.TestCase):
