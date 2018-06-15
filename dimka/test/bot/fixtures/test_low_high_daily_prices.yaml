@@ -1,0 +1,23 @@
+interactions:
+- request:
+    body: ''
+    headers:
+      Content-type: [application/x-www-form-urlencoded]
+    method: POST
+    uri: https://wex.nz/api/3/ticker/ppc_usd
+  response:
+    body: {string: '{"ppc_usd":{"high":1.76,"low":1.64,"avg":1.7,"vol":16996.31852,"vol_cur":10008.14535,"last":1.671,"buy":1.693,"sell":1.671,"updated":1529066427}}'}
+    headers:
+      CF-RAY: [42b51afc284734e2-LHR]
+      Cache-Control: ['no-cache, must-revalidate', 'no-cache, must-revalidate']
+      Connection: [keep-alive]
+      Content-Type: [application/json]
+      Date: ['Fri, 15 Jun 2018 12:40:28 GMT']
+      Expect-CT: ['max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"']
+      Server: [cloudflare]
+      Set-Cookie: ['__cfduid=ddddddddddddddddd; expires=Sat,
+          15-Jun-19 12:40:28 GMT; path=/; domain=.wex.nz; HttpOnly']
+      X-Frame-Options: [DENY]
+      cache-control: ['no-cache, must-revalidate', 'no-cache, must-revalidate']
+    status: {code: 200, message: OK}
+version: 1

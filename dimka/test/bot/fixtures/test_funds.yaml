@@ -1,0 +1,46 @@
+interactions:
+- request:
+    body: ''
+    headers:
+      Content-type: [application/x-www-form-urlencoded]
+    method: POST
+    uri: https://wex.nz/api/3/info
+  response:
+    body: {string: '{"server_time":1529066337,"pairs":{"btc_usd":{"decimal_places":3,"min_price":0.1,"max_price":500000,"min_amount":0.001,"hidden":0,"fee":0.2},"btc_rur":{"decimal_places":5,"min_price":1,"max_price":30000000,"min_amount":0.001,"hidden":0,"fee":0.2},"btc_eur":{"decimal_places":5,"min_price":0.1,"max_price":500000,"min_amount":0.001,"hidden":0,"fee":0.2},"ltc_btc":{"decimal_places":5,"min_price":0.0001,"max_price":10,"min_amount":0.01,"hidden":0,"fee":0.2},"ltc_usd":{"decimal_places":6,"min_price":0.0001,"max_price":10000,"min_amount":0.01,"hidden":0,"fee":0.2},"ltc_rur":{"decimal_places":5,"min_price":0.01,"max_price":1000000,"min_amount":0.01,"hidden":0,"fee":0.2},"ltc_eur":{"decimal_places":3,"min_price":0.0001,"max_price":10000,"min_amount":0.01,"hidden":0,"fee":0.2},"nmc_btc":{"decimal_places":5,"min_price":0.0001,"max_price":10,"min_amount":0.1,"hidden":0,"fee":0.2},"nmc_usd":{"decimal_places":3,"min_price":0.001,"max_price":1000,"min_amount":0.1,"hidden":0,"fee":0.2},"nvc_btc":{"decimal_places":5,"min_price":0.0001,"max_price":10,"min_amount":0.1,"hidden":0,"fee":0.2},"nvc_usd":{"decimal_places":3,"min_price":0.001,"max_price":1000,"min_amount":0.1,"hidden":0,"fee":0.2},"usd_rur":{"decimal_places":5,"min_price":25,"max_price":150,"min_amount":0.1,"hidden":0,"fee":0.2},"eur_usd":{"decimal_places":5,"min_price":0.5,"max_price":2,"min_amount":0.1,"hidden":0,"fee":0.2},"eur_rur":{"decimal_places":5,"min_price":30,"max_price":200,"min_amount":0.1,"hidden":0,"fee":0.2},"ppc_btc":{"decimal_places":5,"min_price":0.0001,"max_price":10,"min_amount":0.1,"hidden":0,"fee":0.2},"ppc_usd":{"decimal_places":3,"min_price":0.001,"max_price":1000,"min_amount":0.1,"hidden":0,"fee":0.2},"dsh_btc":{"decimal_places":5,"min_price":0.0001,"max_price":10,"min_amount":0.01,"hidden":0,"fee":0.2},"dsh_usd":{"decimal_places":5,"min_price":0.1,"max_price":50000,"min_amount":0.01,"hidden":0,"fee":0.2},"dsh_rur":{"decimal_places":3,"min_price":1,"max_price":3000000,"min_amount":0.01,"hidden":0,"fee":0.2},"dsh_eur":{"decimal_places":3,"min_price":0.1,"max_price":50000,"min_amount":0.01,"hidden":0,"fee":0.2},"dsh_ltc":{"decimal_places":3,"min_price":0.1,"max_price":1000,"min_amount":0.01,"hidden":0,"fee":0.2},"dsh_eth":{"decimal_places":3,"min_price":0.1,"max_price":1000,"min_amount":0.01,"hidden":0,"fee":0.2},"dsh_zec":{"decimal_places":3,"min_price":0.0001,"max_price":1000,"min_amount":0.01,"hidden":0,"fee":0.2},"eth_btc":{"decimal_places":5,"min_price":0.0001,"max_price":10,"min_amount":0.01,"hidden":0,"fee":0.2},"eth_usd":{"decimal_places":5,"min_price":0.0001,"max_price":50000,"min_amount":0.01,"hidden":0,"fee":0.2},"eth_eur":{"decimal_places":5,"min_price":0.0001,"max_price":50000,"min_amount":0.01,"hidden":0,"fee":0.2},"eth_ltc":{"decimal_places":5,"min_price":0.0001,"max_price":1000,"min_amount":0.01,"hidden":0,"fee":0.2},"eth_rur":{"decimal_places":5,"min_price":0.0001,"max_price":3000000,"min_amount":0.01,"hidden":0,"fee":0.2},"eth_zec":{"decimal_places":3,"min_price":0.0001,"max_price":1000,"min_amount":0.01,"hidden":0,"fee":0.2},"bch_usd":{"decimal_places":3,"min_price":0.1,"max_price":100000,"min_amount":0.001,"hidden":0,"fee":0.2},"bch_btc":{"decimal_places":4,"min_price":0.001,"max_price":100,"min_amount":0.001,"hidden":0,"fee":0.2},"bch_rur":{"decimal_places":3,"min_price":0.0001,"max_price":6000000,"min_amount":0.01,"hidden":0,"fee":0.2},"bch_eur":{"decimal_places":3,"min_price":0.0001,"max_price":100000,"min_amount":0.01,"hidden":0,"fee":0.2},"bch_ltc":{"decimal_places":3,"min_price":0.0001,"max_price":1000,"min_amount":0.01,"hidden":0,"fee":0.2},"bch_eth":{"decimal_places":3,"min_price":0.0001,"max_price":1000,"min_amount":0.01,"hidden":0,"fee":0.2},"bch_dsh":{"decimal_places":3,"min_price":0.0001,"max_price":1000,"min_amount":0.01,"hidden":0,"fee":0.2},"bch_zec":{"decimal_places":3,"min_price":0.0001,"max_price":1000,"min_amount":0.01,"hidden":0,"fee":0.2},"zec_btc":{"decimal_places":4,"min_price":0.0001,"max_price":10,"min_amount":0.01,"hidden":0,"fee":0.2},"zec_usd":{"decimal_places":3,"min_price":0.0001,"max_price":30000,"min_amount":0.01,"hidden":0,"fee":0.2},"zec_ltc":{"decimal_places":3,"min_price":0.0001,"max_price":1000,"min_amount":0.01,"hidden":0,"fee":0.2},"usdet_usd":{"decimal_places":3,"min_price":0.0001,"max_price":1,"min_amount":0.01,"hidden":0,"fee":0.2},"ruret_rur":{"decimal_places":3,"min_price":0.0001,"max_price":1,"min_amount":0.01,"hidden":0,"fee":0.2},"euret_eur":{"decimal_places":3,"min_price":0.0001,"max_price":1,"min_amount":0.01,"hidden":0,"fee":0.2},"btcet_btc":{"decimal_places":3,"min_price":0.0001,"max_price":1,"min_amount":0.01,"hidden":0,"fee":0.2},"ltcet_ltc":{"decimal_places":3,"min_price":0.0001,"max_price":1,"min_amount":0.01,"hidden":0,"fee":0.2},"ethet_eth":{"decimal_places":3,"min_price":0.0001,"max_price":1,"min_amount":0.01,"hidden":0,"fee":0.2},"nmcet_nmc":{"decimal_places":3,"min_price":0.0001,"max_price":1,"min_amount":0.01,"hidden":0,"fee":0.2},"nvcet_nvc":{"decimal_places":3,"min_price":0.0001,"max_price":1,"min_amount":0.01,"hidden":0,"fee":0.2},"ppcet_ppc":{"decimal_places":3,"min_price":0.0001,"max_price":1,"min_amount":0.01,"hidden":0,"fee":0.2},"dshet_dsh":{"decimal_places":3,"min_price":0.0001,"max_price":1,"min_amount":0.01,"hidden":0,"fee":0.2},"bchet_bch":{"decimal_places":3,"min_price":0.0001,"max_price":1,"min_amount":0.01,"hidden":0,"fee":0.2},"usdt_usd":{"decimal_places":3,"min_price":0.1,"max_price":2,"min_amount":0.01,"hidden":0,"fee":0.2}}}'}
+    headers:
+      CF-RAY: [42b518bd9b0935d2-LHR]
+      Cache-Control: ['no-cache, must-revalidate', 'no-cache, must-revalidate']
+      Connection: [keep-alive]
+      Content-Type: [application/json]
+      Date: ['Fri, 15 Jun 2018 12:38:57 GMT']
+      Expect-CT: ['max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"']
+      Server: [cloudflare]
+      Set-Cookie: ['__cfduid=dddddddddddd; expires=Sat,
+          15-Jun-19 12:38:56 GMT; path=/; domain=.wex.nz; HttpOnly']
+      X-Frame-Options: [DENY]
+      cache-control: ['no-cache, must-revalidate', 'no-cache, must-revalidate']
+    status: {code: 200, message: OK}
+- request:
+    body: method=getInfo&nonce=6
+    headers:
+      Content-type: [application/x-www-form-urlencoded]
+      Key: [key]
+      Sign: [sign]
+    method: POST
+    uri: https://wex.nz/tapi
+  response:
+    body: {string: '{"success":1,"return":{"funds":{"usd":0.00083385,"btc":0.00000002,"ltc":0,"nmc":0,"rur":0,"eur":0,"nvc":0,"ppc":0,"dsh":0,"eth":0,"bch":0.19806438,"usdet":0,"btcet":0,"ltcet":0,"ethet":0,"nmcet":0,"nvcet":0,"ppcet":0,"dshet":0,"ruret":0,"euret":0,"bchet":0,"zec":0,"usdt":0},"rights":{"info":1,"trade":1,"withdraw":0},"transaction_count":0,"open_orders":4,"server_time":1529066337}}'}
+    headers:
+      CF-RAY: [42b518c0eca435d2-LHR]
+      Cache-Control: ['no-cache, must-revalidate', 'no-cache, must-revalidate']
+      Connection: [keep-alive]
+      Content-Type: [text/html; charset=UTF-8]
+      Date: ['Fri, 15 Jun 2018 12:38:57 GMT']
+      Expect-CT: ['max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"']
+      Server: [cloudflare]
+      Set-Cookie: ['__cfduid=ddddddddddddd; expires=Sat,
+          15-Jun-19 12:38:57 GMT; path=/; domain=.wex.nz; HttpOnly']
+      X-Frame-Options: [DENY]
+      cache-control: ['no-cache, must-revalidate', 'no-cache, must-revalidate']
+    status: {code: 200, message: OK}
+version: 1

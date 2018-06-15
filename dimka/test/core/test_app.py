@@ -1,4 +1,4 @@
-from unittest import TestCase
+import unittest
 import os.path
 import tempfile
 import sys
@@ -6,7 +6,7 @@ import sys
 from dimka.core.app import Application
 
 
-class TestConfig(TestCase):
+class TestConfig(unittest.TestCase):
     conf = os.path.join(tempfile.gettempdir(), "conf.yaml")
     db = os.path.join(tempfile.gettempdir(), "db.sqlite3")
 
@@ -40,3 +40,7 @@ class TestConfig(TestCase):
         f.write("db_path: {}\n".format(db_path))
         f.write("key_path: /tmp/keys.txt\n")
         f.close()
+
+
+if __name__ == '__main__':
+    unittest.main()

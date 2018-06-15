@@ -1,10 +1,10 @@
 from decimal import Decimal, ROUND_HALF_DOWN
-from unittest import TestCase
+import unittest
 
 import dimka.core.utils as utils
 
 
-class TestUtils(TestCase):
+class TestUtils(unittest.TestCase):
     def test_truncate_digits(self):
         self.assertIsInstance(
             utils.truncate_digits(1, 0),
@@ -39,3 +39,6 @@ class TestUtils(TestCase):
             str(utils.td(0.345, 2)),
         )
 
+
+if __name__ == '__main__':
+    unittest.main()

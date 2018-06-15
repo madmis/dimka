@@ -16,7 +16,7 @@ This is an experimental bot for auto trading the wex.nz exchange.
 - [How it looks?](#how-it-looks)
 - [How it works?](#how-it-works)
 - [Installation with Docker](#installation-with-docker)
-- [Login to docker container](#login-to-docker-containert)
+- [Login to docker container](#login-to-docker-container)
 - [Running the bot](#running-the-bot)
 - [Run tests](#run-tests)
 - [Contributing](#contributing)
