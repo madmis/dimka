@@ -37,44 +37,42 @@ class Bot(BaseBot):
 
         self.cancel_buy_orders()
 
-        sell_len = len(sell_orders)
-
         last_buy_order = None
         # Check quote funds - is it possible to open BUY order?
         if quote_funds > self.pair_info.min_amount:
             self.logger.success("Check possibility to open BUY order")
-            buy_amount = quote_funds / Decimal(str(MAX_ORDERS - sell_len))
 
-            if buy_amount > self.pair_info.min_amount:
-                # Calculate allowed buy price and create buy order
-                # Waiting for it execution or restart bot
-                top_price = self.top_sell_price()
-                self.logger.success("  Top SELL price: {:f}".format(
-                    td(top_price, self.pair_info.decimal_places)
-                ))
-                self.logger.success("  Increase unit: {:f}".format(self.get_price_unit()))
-                price = top_price + self.get_price_unit()
-                self.logger.success("  BUY price: {:f}".format(price))
-                amount = td(Decimal("0.001") / price, self.units())
-                self.logger.success("  BUY amount: {:f}".format(amount))
+            # Calculate allowed buy price and create buy order
+            # Waiting for it execution or restart bot
+            top_price = self.top_sell_price()
+            self.logger.success("  Top SELL price: {:f}".format(
+                td(top_price, self.pair_info.decimal_places)
+            ))
+            self.logger.success("  Increase unit: {:f}".format(self.get_price_unit()))
+            price = top_price - self.get_price_unit()
+            self.logger.success("  BUY price: {:f}".format(price))
+            amount = td(quote_funds / price, self.units())
+            self.logger.success("  BUY amount: {:f}".format(amount))
 
-                buy_allowed, message = self.is_buy_allowed(price)
-                if not self.is_buy_allowed(price):
-                    raise RestartBotException(message, timeout=30)
+            buy_allowed, message = self.is_buy_allowed(price)
+            if not self.is_buy_allowed(price):
+                raise RestartBotException(message, timeout=30)
 
-                order = self.create_buy_order(price, amount)
+            self.logger.success("Start BUY")
+            order = self.create_buy_order(price, amount)
+            time.sleep(1)
 
-                buy_state, order_info = self.waiting_order_execution(
-                    order.order_id,
-                    'buy',
-                    self.args.iters,
-                    self.args.iters_time,
-                )
-                if buy_state:
-                    last_buy_order = self.save_order(order_info)
-                else:
-                    self.logger.success("  Cancel order #{}".format(order_info.order_id))
-                    self.cancel_order(order_info.order_id)
+            buy_state, order_info = self.waiting_order_execution(
+                order.order_id,
+                'buy',
+                self.args.iters,
+                self.args.iters_time,
+            )
+            if buy_state:
+                last_buy_order = self.save_order(order_info)
+            else:
+                self.logger.success("  Cancel order #{}".format(order_info.order_id))
+                self.cancel_order(order_info.order_id)
 
         # SELL
         self.logger.success("Starting SELL")
@@ -117,7 +115,9 @@ class Bot(BaseBot):
                 self.logger.debug("    SELL price: {:f}".format(td(sell_price, self.pair_info.decimal_places)))
 
                 sell_res = self.create_sell_order(sell_price, order_amount)
-                if sell_res.order_id:
+                time.sleep(1)
+
+                if not sell_res.order_id:
                     order = self.get_last_order_from_history('sell')
                 else:
                     with wexapi.common.WexConnection() as conn:
@@ -200,9 +200,15 @@ class Bot(BaseBot):
             self.logger.debug("Waiting for order #{} execution ...".format(order_id))
             order_info = t.order_info(order_id)
 
-            while order_info.status != 1 or iter_count > 0:
+            while iter_count > 0:
                 time.sleep(iter_time)
-                iter_count -= 1
+
+                if order_info.status == 1:
+                    # order executed. Exist from while
+                    iter_count = 0
+                else:
+                    iter_count -= 1
+
                 self.logger.debug("  Left iterations: {}".format(iter_count))
 
                 self.show_orders_info([order_info])
@@ -211,7 +217,7 @@ class Bot(BaseBot):
             else:
                 return order_info.status == 1, order_info
 
-    def get_last_order_from_history(self, order_type: str) -> wex_models.Order:
+    def get_last_order_from_history(self, order_type: str) -> Union[None, wex_models.Order]:
         """
         :param order_type: buy OR sell
         """
@@ -222,12 +228,13 @@ class Bot(BaseBot):
                 if item.is_your_order and item.type == order_type:
                     return t.order_info(item.order_id)
 
-            raise Exception(
-                "Wex history doesn't contains {} order for pair {}. Are you doing something wrong?".format(
-                    type,
-                    self.pair,
-                )
-            )
+            # raise Exception(
+            #     "Wex history doesn't contains {} order for pair {}. Are you doing something wrong?".format(
+            #         type,
+            #         self.pair,
+            #     )
+            # )
+            return None
 
     def find_sell_price(self, last_buy_order: models.OrderInfo = None):
         if not last_buy_order:
